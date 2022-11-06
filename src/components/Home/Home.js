@@ -58,7 +58,7 @@ export default function Home({ token }) {
     
     return (
         <>
-        <Row justify='space-around'>
+        <Row justify='space-round'>
             {
                 (user && user.isAdmin) ? 
                     <>
@@ -69,8 +69,9 @@ export default function Home({ token }) {
                     </>
                 : null
             }
-            <Title level={4}>{user ? user.username : null}</Title>
-        </Row>
+            <Title level={4}>{user ? "Usuario: " + user.username : null}</Title>
+            
+            </Row>
         <Divider/>
         <Search loading={clients.loading} type="text" placeholder="Buscar por nombre del cliente" onSearch={onSearch} allowClear/>
         {

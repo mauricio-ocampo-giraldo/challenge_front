@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className="wrapper">
-      <h1>Clients visualization</h1>
+      <h1>Visualización de cliente</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home token={token}/>} />

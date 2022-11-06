@@ -21,16 +21,16 @@ export default function Login({ setToken }) {
 
     return (
         <div className="login-wrapper">
-            <Title>Log In</Title>
+            <Title>Incio de Sesión</Title>
             <Form form={form} name='login'>
-                <Form.Item label="Username" name="username" rules={[{ required: true, message: 'Username is required!' }]}>
+                <Form.Item label="Usuario" name="username" rules={[{ required: true, message: 'Se requiere usuario!' }]}>
                     <Input type="text"/>
                 </Form.Item>
-                <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Password is required' }]}>
+                <Form.Item label="Clave" name="password" rules={[{ required: true, message: 'Se requiere una clave' }]}>
                     <Input type="password"/>
                 </Form.Item>
                 <Form.Item>
-                    <Button type="submit" onClick={login}>Submit</Button>
+                    <Button type="submit" onClick={login}>Ingresar</Button>
                 </Form.Item>
             </Form>
         </div>
