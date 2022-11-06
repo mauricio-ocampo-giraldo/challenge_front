@@ -44,10 +44,10 @@ export default function Home({ token }) {
 
     const modalNewUser = (
         <Form form={form} name='login'>
-            <Form.Item label="Username" name="username" rules={[{ required: true, message: 'Username is required!' }]}>
+            <Form.Item label="Usuario" name="username" rules={[{ required: true, message: 'Username is required!' }]}>
                 <Input type="text"/>
             </Form.Item>
-            <Form.Item label="Password" name="password" rules={[{ required: true, message: 'Password is required' }]}>
+            <Form.Item label="Clave" name="password" rules={[{ required: true, message: 'Password is required' }]}>
                 <Input type="password"/>
             </Form.Item>
             <Form.Item name="isAdmin" valuePropName="checked">
@@ -58,12 +58,12 @@ export default function Home({ token }) {
     
     return (
         <>
-        <Row justify='space-round'>
+        <Row justify='space-around'>
             {
                 (user && user.isAdmin) ? 
                     <>
                     <Button onClick={() => setModal({open:true})}>Crear nuevo usuario</Button>
-                    <Modal confirmLoading={modal.loading} title="Registrar usuario" open={modal.open} onOk={createUser} onCancel={() => setModal({open:false})}>
+                    <Modal confirmLoading={modal.loading} title="Crear usuario" open={modal.open} onOk={createUser} onCancel={() => setModal({open:false})}>
                         {modalNewUser}
                     </Modal>
                     </>
@@ -72,6 +72,7 @@ export default function Home({ token }) {
             <Title level={4}>{user ? "Usuario: " + user.username : null}</Title>
             
         </Row>
+
         <Divider/>
         <Search loading={clients.loading} type="text" placeholder="Buscar por nombre del cliente" onSearch={onSearch} allowClear/>
         {
@@ -89,7 +90,7 @@ export default function Home({ token }) {
                                             <Divider/>
                                             <Descriptions size="small" layout="vertical">
                                                 <Descriptions.Item label="Address">{client.direccion}</Descriptions.Item>
-                                                <Descriptions.Item label="Credit card ccv">{client.credit_card_ccv}</Descriptions.Item>
+                                                <Descriptions.Item label="Credit card ccv">{client.credit_card_ccv.replace(/[0-9](?=.*.{1})/g, "*")}</Descriptions.Item>
                                                 <Descriptions.Item label="Credit card number">{client.credit_card_num.replace(/[0-9](?=.*.{4})/g, "*")}</Descriptions.Item>
                                             </Descriptions>
                                         </Card>
