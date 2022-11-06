@@ -21,9 +21,9 @@ export default function Login({ setToken }) {
 
     return (
         <div className="login-wrapper">
-            <Title>Incio de Sesión</Title>
+            <Title>Inicio de Sesión</Title>
             <Form form={form} name='login'>
-                <Form.Item label="Usuario" name="username" rules={[{ required: true, message: 'Se requiere usuario!' }]}>
+                <Form.Item label="Usuario" name="username" rules={[{ required: true, message: 'Se requiere usuario' }]}>
                     <Input type="text"/>
                 </Form.Item>
                 <Form.Item label="Clave" name="password" rules={[{ required: true, message: 'Se requiere una clave' }]}>

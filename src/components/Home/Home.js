@@ -71,7 +71,7 @@ export default function Home({ token }) {
             }
             <Title level={4}>{user ? "Usuario: " + user.username : null}</Title>
             
-            </Row>
+        </Row>
         <Divider/>
         <Search loading={clients.loading} type="text" placeholder="Buscar por nombre del cliente" onSearch={onSearch} allowClear/>
         {
